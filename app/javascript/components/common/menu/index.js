@@ -16,19 +16,21 @@ const ColumnsFullWidth = styled(Columns)`
 const Menu = () => {
   let actionButton;
 
-  if (useLocation().pathname == '/') {
-    actionButton = <a href='/users/sign_in' className="is-pulled-right is-right">
+   if (useLocation().pathname == '/') {
+    actionButton = 
+    <a href='/users/sign_in' className="is-pulled-right is-right">
       <Button outlined={true} color="white">ENTRAR</Button>
     </a>
   }
   else {
-    actionButton = <Dropdown className='is-pulled-right is-right' color='dark' label={<FaUserCircle size="2em" />}>
-     <Dropdown.Item value="Perfil">
+    actionButton =
+     <Dropdown className='is-pulled-right is-right' color='dark' label={<FaUserCircle size="2em" />}>
+     <Dropdown.Item value="other">
        <a href='/users/edit'>
         Perfil
        </a>
      </Dropdown.Item>
-     <Dropdown.Item value="Logout">
+     <Dropdown.Item value="other">
        <a href='/users/sign_out'>
         Sair
        </a>
