@@ -1,21 +1,24 @@
-import React, {Fragment} from 'react';
-import styled from 'styled-components'
-import { Image, Heading } from 'react-bulma-components';
-import { Link } from 'react-router-dom'
+import React, { Fragment, useState, useEffect } from 'react';
+import { Heading, Columns, Image } from 'react-bulma-components';
+import styled from 'styled-components';
 
-const DivVSpaced = styled.div`
-  margin-top: 10px;
+const DivSpaced = styled.div`
+ margin-top: 20px;
+ margin-bottom: 20px;
 `
-
-const Album = (props) => {
-  return(
-<Link to={`/album/${props.id}`}>
-<Image src={props.cover_url}/>
-      <DivVSpaced>
-        <Heading size={6} className='has-text-white'>{props.title}</Heading>
-        <Heading size={6} className='has-text-white' subtitle>{props.artist_name}</Heading>
-      </DivVSpaced>
-    </Link>
-  );
+const Albums = () => {
+ return (
+   <Fragment>
+     <Columns className='is-vcentered is-mobile is-centered'>
+       <Columns.Column desktop={{size: 3}} className='has-text-centered'>
+         <Image src=''/>
+         <DivSpaced>
+           <Heading size={5} className='has-text-white'>Título</Heading>
+           <Heading size={6} subtitle className='has-text-white'>SubTítulo</Heading>
+         </DivSpaced>
+       </Columns.Column>
+     </Columns>
+   </Fragment>
+);
 }
-export default Album;
+export default Albums;
